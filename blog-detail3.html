@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+     <title>Check-up Climat - Calculateur impact CO2</title>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+     <meta name="description" content="Calculateur d'impact CO2 pour suivre et réduire votre empreinte environnementale">
+     <meta name="keywords" content="CO2, climat, empreinte carbone, calculateur, environnement">
+     <meta name="author" content="Check-up Climat">
+     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+     <link rel="stylesheet" href="css/bootstrap.min.css">
+     <link rel="stylesheet" href="css/magnific-popup.css">
+     <link rel="stylesheet" href="css/font-awesome.min.css">
+
+     <!-- MAIN CSS -->
+     <link rel="stylesheet" href="css/templatemo-style.css">
+     
+     <style>
+          .calculator-section {
+               background-color: #f9f9f9;
+               padding: 80px 0;
+          }
+          
+          .calculator-card {
+               background-color: white;
+               border-radius: 10px;
+               box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+               padding: 30px;
+               margin-bottom: 30px;
+          }
+          
+          .calculator-header {
+               border-bottom: 1px solid #eee;
+               margin-bottom: 25px;
+               padding-bottom: 15px;
+          }
+          
+          .calculator-header h3 {
+               color: #29ca8e;
+               font-weight: 600;
+          }
+          
+          .calculator-input {
+               margin-bottom: 20px;
+          }
+          
+          .calculator-input label {
+               display: block;
+               margin-bottom: 8px;
+               font-weight: 500;
+          }
+          
+          .result-box {
+               background-color: #29ca8e;
+               color: white;
+               border-radius: 8px;
+               padding: 25px;
+               text-align: center;
+               margin-top: 20px;
+          }
+          
+          .result-value {
+               font-size: 36px;
+               font-weight: 700;
+               margin: 10px 0;
+          }
+          
+          .result-label {
+               font-size: 16px;
+               opacity: 0.9;
+          }
+          
+          .tips-section {
+               margin-top: 20px;
+          }
+          
+          .tip-item {
+               background-color: #f1fef7;
+               border-left: 4px solid #29ca8e;
+               padding: 15px;
+               margin-bottom: 15px;
+          }
+          
+          .feature-card {
+               text-align: center;
+               padding: 20px;
+          }
+          
+          .feature-card i {
+               font-size: 48px;
+               color: #29ca8e;
+               margin-bottom: 15px;
+          }
+          
+          .advanced-badge {
+               background-color: #2D99CC;
+               color: white;
+               padding: 4px 10px;
+               border-radius: 20px;
+               font-size: 12px;
+               margin-left: 10px;
+          }
+          
+          .tab-buttons {
+               display: flex;
+               margin-bottom: 30px;
+          }
+          
+          .tab-btn {
+               flex: 1;
+               text-align: center;
+               padding: 15px;
+               background-color: #f9f9f9;
+               cursor: pointer;
+               transition: all 0.3s ease;
+          }
+          
+          .tab-btn.active {
+               background-color: #29ca8e;
+               color: white;
+          }
+          
+          .tab-btn:first-child {
+               border-top-left-radius: 5px;
+               border-bottom-left-radius: 5px;
+          }
+          
+          .tab-btn:last-child {
+               border-top-right-radius: 5px;
+               border-bottom-right-radius: 5px;
+          }
+          
+          .tab-content {
+               display: none;
+          }
+          
+          .tab-content.active {
+               display: block;
+          }
+     </style>
+</head>
+<body>
+
+     <!-- PRE LOADER -->
+     <section class="preloader">
+          <div class="spinner">
+               <span class="spinner-rotate"></span>
+          </div>
+     </section>
+
+     <!-- MENU -->
+     <section class="navbar custom-navbar navbar-fixed-top" role="navigation">
+          <div class="container">
+
+               <div class="navbar-header">
+                    <button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                         <span class="icon icon-bar"></span>
+                         <span class="icon icon-bar"></span>
+                         <span class="icon icon-bar"></span>
+                    </button>
+
+                    <!-- lOGO TEXT HERE -->
+                    <a class="logo" href="index.html"><img src="images/logo.jpg" alt=""></a>
+                    <a href="index.html" class="navbar-brand">Check-up Climat</a>
+               </div>
+
+               <!-- MENU LINKS -->
+               <div class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav navbar-nav-first">
+                         <li><a href="index.html#home" class="smoothScroll">ACCUEIL</a></li>
+                         <li><a href="index.html#about" class="smoothScroll">À PROPOS</a></li>
+                         <li><a href="index.html#blog" class="smoothScroll">BLOG</a></li>
+                         <li><a href="index.html#work" class="smoothScroll">NOTRE APPROCHE</a></li>
+                         <li><a href="index.html#contact" class="smoothScroll">CONTACT</a></li>
+                    </ul>
+
+                    <ul class="nav navbar-nav navbar-right">
+                         <li><a href="#"><i class="fa fa-facebook-square"></i></a></li>
+                         <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                         <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                    </ul>
+               </div>
+
+          </div>
+     </section>
+
+     <!-- HEADER -->
+     <section id="blog-header" data-stellar-background-ratio="0.5">
+          <div class="overlay"></div>
+          <div class="container">
+               <div class="row">
+                    <div class="col-md-offset-1 col-md-5 col-sm-12">
+                         <h2>Calculateur d'impact CO2</h2>
+                         <p class="text-white">Suivez et réduisez votre empreinte carbone en toute simplicité</p>
+                    </div>
+               </div>
+          </div>
+     </section>
+
+     <!-- CALCULATOR SECTION -->
+     <section id="calculator" class="calculator-section">
+          <div class="container">
+               <div class="row">
+                    <div class="col-md-12 text-center">
+                         <h2>Mesurez votre empreinte carbone</h2>
+                         <p>Notre calculateur vous permet d'évaluer facilement votre impact environnemental et vous propose des solutions pour le réduire.</p>
+                    </div>
+               </div>
+
+               <div class="row">
+                    <div class="col-md-12">
+                         <div class="tab-buttons">
+                              <div class="tab-btn active" onclick="showTab('tab-basic')">Calculateur Standard</div>
+                              <div class="tab-btn" onclick="showTab('tab-advanced')">Version Avancée <span class="advanced-badge">Premium</span></div>
+                         </div>
+                    </div>
+               </div>
+
+               <!-- BASIC CALCULATOR -->
+               <div id="tab-basic" class="tab-content active">
+                    <div class="row">
+                         <div class="col-md-8">
+                              <div class="calculator-card">
+                                   <div class="calculator-header">
+                                        <h3>Calculateur Standard</h3>
+                                        <p>Remplissez les informations ci-dessous pour estimer votre empreinte carbone.</p>
+                                   </div>
+
+                                   <div class="calculator-body">
+                                        <!-- TRANSPORT -->
+                                        <div class="calculator-input">
+                                             <label><i class="fa fa-car"></i> Transport quotidien</label>
+                                             <select class="form-control" id="transport">
+                                                  <option value="0">Je me déplace principalement à pied ou à vélo</option>
+                                                  <option value="1.5">Transports en commun (moins de 30 min/jour)</option>
+                                                  <option value="3">Transports en commun (plus de 30 min/jour)</option>
+                                                  <option value="4.5">Voiture individuelle (moins de 20 km/jour)</option>
+                                                  <option value="9">Voiture individuelle (plus de 20 km/jour)</option>
+                                             </select>
+                                        </div>
+
+                                        <!-- ALIMENTATION -->
+                                        <div class="calculator-input">
+                                             <label><i class="fa fa-cutlery"></i> Régime alimentaire</label>
+                                             <select class="form-control" id="alimentation">
+                                                  <option value="2.5">Végétalien</option>
+                                                  <option value="3.5">Végétarien</option>
+                                                  <option value="4.5">Flexitarien (viande 1-2 fois/semaine)</option>
+                                                  <option value="7">Omnivore (viande plusieurs fois par semaine)</option>
+                                                  <option value="10">Grande consommation de viande quotidienne</option>
+                                             </select>
+                                        </div>
+
+                                        <!-- LOGEMENT -->
+                                        <div class="calculator-input">
+                                             <label><i class="fa fa-home"></i> Logement</label>
+                                             <select class="form-control" id="logement">
+                                                  <option value="1.5">Petit appartement, bien isolé, énergie verte</option>
+                                                  <option value="3">Appartement standard</option>
+                                                  <option value="5">Maison bien isolée</option>
+                                                  <option value="8">Grande maison ou logement mal isolé</option>
+                                             </select>
+                                        </div>
+
+                                        <!-- CONSOMMATION -->
+                                        <div class="calculator-input">
+                                             <label><i class="fa fa-shopping-bag"></i> Habitudes de consommation</label>
+                                             <select class="form-control" id="consommation">
+                                                  <option value="1">Achats minimalistes, seconde main privilégiée</option>
+                                                  <option value="3">Consommation modérée, attention à l'impact</option>
+                                                  <option value="5">Consommation standard</option>
+                                                  <option value="8">Consommation importante de biens manufacturés</option>
+                                             </select>
+                                        </div>
+
+                                        <button class="btn btn-success btn-block" onclick="calculateEmission()">Calculer mon impact</button>
+                                   </div>
+                              </div>
+                         </div>
+
+                         <div class="col-md-4">
+                              <div class="calculator-card">
+                                   <div class="calculator-header">
+                                        <h3>Résultats</h3>
+                                   </div>
+                                   <div id="result" class="result-box">
+                                        <div class="result-label">Votre empreinte carbone estimée</div>
+                                        <div class="result-value">-- tonnes CO2/an</div>
+                                        <div>Moyenne française : 9,9 tonnes CO2/an</div>
+                                   </div>
+
+                                   <div class="tips-section">
+                                        <h4>Conseils personnalisés</h4>
+                                        <div class="tip-item">
+                                             <p><strong>Mobilité :</strong> Privilégiez les transports en commun ou le covoiturage pour réduire votre impact.</p>
+                                        </div>
+                                        <div class="tip-item">
+                                             <p><strong>Alimentation :</strong> Réduire sa consommation de viande peut diminuer jusqu'à 30% son empreinte carbone.</p>
+                                        </div>
+                                   </div>
+                              </div>
+                         </div>
+                    </div>
+               </div>
+
+               <!-- ADVANCED CALCULATOR -->
+               <div id="tab-advanced" class="tab-content">
+                    <div class="row">
+                         <div class="col-md-8">
+                              <div class="calculator-card">
+                                   <div class="calculator-header">
+                                        <h3>Calculateur Avancé <span class="advanced-badge">Premium</span></h3>
+                                        <p>Connectez vos comptes bancaires pour un suivi en temps réel de votre empreinte carbone.</p>
+                                   </div>
+
+                                   <div class="calculator-body">
+                                        <div class="text-center" style="padding: 20px;">
+                                             <i class="fa fa-lock" style="font-size: 48px; color: #29ca8e; margin-bottom: 20px;"></i>
+                                             <h4>Connexion sécurisée à vos comptes</h4>
+                                             <p>Nos algorithmes analysent vos dépenses pour calculer précisément votre empreinte carbone, sans stocker vos données bancaires.</p>
+                                             <br>
+                                             <button class="btn btn-primary">Connecter mes comptes bancaires</button>
+                                             <br><br>
+                                             <p><small>Connexion sécurisée via API bancaire certifiée. Vos données sont cryptées et jamais stockées.</small></p>
+                                        </div>
+                                   </div>
+                              </div>
+                         </div>
+
+                         <div class="col-md-4">
+                              <div class="calculator-card">
+                                   <div class="calculator-header">
+                                        <h3>Avantages Premium</h3>
+                                   </div>
+                                   <ul style="padding-left: 20px;">
+                                        <li>Calcul automatique basé sur vos dépenses réelles</li>
+                                        <li>Mise à jour en temps réel de votre empreinte</li>
+                                        <li>Détection des postes de dépenses à fort impact</li>
+                                        <li>Suivi de votre progression mensuelle</li>
+                                        <li>Recommandations personnalisées d'économies</li>
+                                        <li>Comparaison avec des foyers similaires</li>
+                                   </ul>
+                                   <br>
+                                   <button class="btn btn-success btn-block">Découvrir l'offre Premium</button>
+                              </div>
+                         </div>
+                    </div>
+               </div>
+          </div>
+     </section>
+
+     <!-- FEATURES SECTION -->
+     <section id="features" style="padding: 80px 0; background-color: white;">
+          <div class="container">
+               <div class="row">
+                    <div class="col-md-12 text-center">
+                         <h2>Pourquoi utiliser notre calculateur ?</h2>
+                         <p>Des fonctionnalités uniques pour vous aider à réduire votre impact environnemental</p>
+                         <br>
+                    </div>
+               </div>
+
+               <div class="row">
+                    <div class="col-md-4">
+                         <div class="feature-card">
+                              <i class="fa fa-pie-chart"></i>
+                              <h3>Analyse détaillée</h3>
+                              <p>Identifiez précisément les sources de votre empreinte carbone pour cibler vos efforts efficacement.</p>
+                         </div>
+                    </div>
+                    <div class="col-md-4">
+                         <div class="feature-card">
+                              <i class="fa fa-line-chart"></i>
+                              <h3>Suivi dans le temps</h3>
+                              <p>Visualisez votre progression et l'impact de vos changements de comportement au fil du temps.</p>
+                         </div>
+                    </div>
+                    <div class="col-md-4">
+                         <div class="feature-card">
+                              <i class="fa fa-lightbulb-o"></i>
+                              <h3>Recommandations personnalisées</h3>
+                              <p>Recevez des conseils adaptés à votre profil pour réduire votre empreinte de manière efficace.</p>
+                         </div>
+                    </div>
+               </div>
+
+               <div class="row" style="margin-top: 30px;">
+                    <div class="col-md-4">
+                         <div class="feature-card">
+                              <i class="fa fa-users"></i>
+                              <h3>Comparaison sociale</h3>
+                              <p>Comparez votre empreinte avec la moyenne nationale et d'autres personnes ayant un profil similaire.</p>
+                         </div>
+                    </div>
+                    <div class="col-md-4">
+                         <div class="feature-card">
+                              <i class="fa fa-leaf"></i>
+                              <h3>Objectifs écologiques</h3>
+                              <p>Fixez-vous des objectifs réalistes et suivez votre progression vers un mode de vie plus durable.</p>
+                         </div>
+                    </div>
+                    <div class="col-md-4">
+                         <div class="feature-card">
+                              <i class="fa fa-credit-card"></i>
+                              <h3>Connexion bancaire sécurisée</h3>
+                              <p>Analyse automatique de vos dépenses pour un calcul précis de votre empreinte carbone (version Premium).</p>
+                         </div>
+                    </div>
+               </div>
+          </div>
+     </section>
+
+     <!-- CALL TO ACTION -->
+     <section id="cta" style="padding: 60px 0; background-color: #29ca8e; color: white;">
+          <div class="container text-center">
+               <h2>Prêt à agir pour la planète ?</h2>
+               <p>Calculez votre empreinte carbone et découvrez comment la réduire efficacement.</p>
+               <br>
+               <button class="btn btn-primary btn-lg" style="background-color: white; color: #29ca8e;">Commencer maintenant</button>
+          </div>
+     </section>
+
+     <!-- FOOTER -->
+     <footer data-stellar-background-ratio="0.5">
+          <div class="container">
+               <div class="row">
+
+                    <div class="col-md-5 col-sm-12">
+                         <div class="footer-thumb footer-info"> 
+                              <h2>Check-up Climat</h2>
+                              <p>Construisons ensemble un avenir durable.</p>
+                         </div>
+                    </div>
+
+                    <div class="col-md-2 col-sm-4"> 
+                         <div class="footer-thumb"> 
+                              <h2>Company</h2>
+                              <ul class="footer-link">
+                                   <li><a href="#">About Us</a></li>
+                                   <li><a href="#">Join our team</a></li>
+                                   <li><a href="#">Read Blog</a></li>
+                              </ul>
+                         </div>
+                    </div>
+
+                    <div class="col-md-2 col-sm-4"> 
+                         <div class="footer-thumb"> 
+                              <h2>Services</h2>
+                              <ul class="footer-link">
+                                   <li><a href="#">Pricing</a></li>
+                                   <li><a href="#">Documentation</a></li>
+                                   <li><a href="#">Support</a></li>
+                              </ul>
+                         </div>
+                    </div>
+
+                    <div class="col-md-3 col-sm-4"> 
+                         <div class="footer-thumb"> 
+                              <h2>Adresse</h2>
+                              <p>CHECK-UP CLIMAT <br> STATION F, 5 PARVIS ALAN TURING, 75013 PARIS.</p>
+                         </div>
+                    </div>
+
+                    <div class="col-md-12 col-sm-12">
+                         <div class="footer-bottom">
+                              <div class="col-md-6 col-sm-5">
+                                   <div class="copyright-text"> 
+                                        <p>Copyright &copy; 2025 Check-Up Climat</p>
+                                   </div>
+                              </div>
+                              <div class="col-md-6 col-sm-7">
+                                   <div class="phone-contact"> 
+                                        <p>Téléphone <span>(+33) 09-63-21-00-71</span></p>
+                                   </div>
+                                   <ul class="social-icon">
+                                        <li><a href="#" class="fa fa-facebook-square" attr="facebook icon"></a></li>
+                                        <li><a href="#" class="fa fa-twitter"></a></li>
+                                        <li><a href="#" class="fa fa-instagram"></a></li>
+                                   </ul>
+                              </div>
+                         </div>
+                    </div>
+                    
+               </div>
+          </div>
+     </footer>
+
+     <!-- SCRIPTS -->
+     <script src="js/jquery.js"></script>
+     <script src="js/bootstrap.min.js"></script>
+     <script src="js/jquery.stellar.min.js"></script>
+     <script src="js/jquery.magnific-popup.min.js"></script>
+     <script src="js/smoothscroll.js"></script>
+     <script src="js/custom.js"></script>
+     
+     <script>
+          function showTab(tabId) {
+               // Hide all tabs
+               const tabContents = document.querySelectorAll('.tab-content');
+               tabContents.forEach(tab => {
+                    tab.classList.remove('active');
+               });
+               
+               // Deactivate all buttons
+               const tabButtons = document.querySelectorAll('.tab-btn');
+               tabButtons.forEach(btn => {
+                    btn.classList.remove('active');
+               });
+               
+               // Show selected tab
+               document.getElementById(tabId).classList.add('active');
+               
+               // Find and activate the corresponding button
+               const buttonIndex = tabId === 'tab-basic' ? 0 : 1;
+               document.querySelectorAll('.tab-btn')[buttonIndex].classList.add('active');
+          }
+          
+          function calculateEmission() {
+               // Get values from dropdowns
+               const transport = parseFloat(document.getElementById('transport').value);
+               const alimentation = parseFloat(document.getElementById('alimentation').value);
+               const logement = parseFloat(document.getElementById('logement').value);
+               const consommation = parseFloat(document.getElementById('consommation').value);
+               
+               // Calculate total (simplified calculation)
+               const total = transport + alimentation + logement + consommation;
+               
+               // Update result
+               document.querySelector('.result-value').textContent = total.toFixed(1) + ' tonnes CO2/an';
+               
+               // Change background color based on result
+               const resultBox = document.getElementById('result');
+               if (total < 5) {
+                    resultBox.style.backgroundColor = '#27ae60'; // Green for low impact
+               } else if (total < 10) {
+                    resultBox.style.backgroundColor = '#f39c12'; // Orange for medium impact
+               } else {
+                    resultBox.style.backgroundColor = '#e74c3c'; // Red for high impact
+               }
+          }
+     </script>
+
+</body>
+</html>
